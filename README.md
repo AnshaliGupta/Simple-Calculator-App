@@ -29,7 +29,7 @@ This app was developed as part of my Android learning journey to strengthen my u
 
 | Calculator UI                                    |
 | ------------------------------------------------ |
-| <img width="397" height="811" alt="Screenshot 2025-10-24 221742" src="https://github.com/user-attachments/assets/5e829aae-d8c1-45e3-9c6e-9ac682d96a14" /> |
+| <img width="197" height="611" alt="Screenshot 2025-10-24 221742" src="https://github.com/user-attachments/assets/5e829aae-d8c1-45e3-9c6e-9ac682d96a14" /> |
 
 ---
 
