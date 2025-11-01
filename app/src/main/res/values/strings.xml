@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Calculator</string>
+    <string name="app_name">QuickCalc</string>
     <string name="_9">9</string>
     <string name="input">0</string>
     <string name="_7">7</string>
@@ -12,7 +12,6 @@
     <string name="_1">1</string>
     <string name="_2">2</string>
     <string name="_3">3</string>
-    <string name="subtract">-</string>
     <string name="add">+</string>
     <string name="_0">0</string>
     <string name="decimal">.</string>
@@ -21,4 +20,10 @@
     <string name="percent">%</string>
     <string name="ac">AC</string>
     <string name="del">⌫</string>
+    <string name="u2212">−</string>
+    <string name="cal_name">QuickCalc</string>
+    <string name="about">About</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="help">Help</string>
 </resources>

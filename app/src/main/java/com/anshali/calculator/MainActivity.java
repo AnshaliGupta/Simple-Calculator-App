@@ -2,9 +2,16 @@ package com.anshali.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.graphics.drawable.Animatable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.TokenWatcher;
+import android.util.TypedValue;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,9 +32,43 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /* if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            inputNum.setAutoSizeTextTypeUniformWithConfiguration(
+                    18,
+                    60,
+                    1,
+                    TypedValue.COMPLEX_UNIT_SP
+            );
+        } */
+
         initViews();
 
+        Animation scaleAnim = AnimationUtils.loadAnimation(this, R.anim.button_click);
+
+        @SuppressLint("ClickableViewAccessibility") View.OnTouchListener buttonTouchListener = (v, event) -> {
+          if(event.getAction() == MotionEvent.ACTION_DOWN) {
+              v.startAnimation(scaleAnim);
+          }
+          return false;
+        };
+
         MaterialButton[] numberButtons = {button0, button1, button2, button3, button4, button5, button6, button7, button8, button9};
+        MaterialButton[] operatorButtons = {buttonAdd, buttonSub, buttonMul, buttonDiv};
+
+        for(int i=0; i<numberButtons.length; i++) {
+            numberButtons[i].setOnTouchListener(buttonTouchListener);
+        }
+
+        for(int i=0; i<operatorButtons.length; i++) {
+            operatorButtons[i].setOnTouchListener(buttonTouchListener);
+        }
+
+        buttonEqual.setOnTouchListener(buttonTouchListener);
+        buttonDel.setOnTouchListener(buttonTouchListener);
+        buttonAC.setOnTouchListener(buttonTouchListener);
+        buttonPer.setOnTouchListener(buttonTouchListener);
+        buttonSign.setOnTouchListener(buttonTouchListener);
+        buttonDec.setOnTouchListener(buttonTouchListener);
 
         for(int i=0; i<numberButtons.length; i++) {
             int finalI = i;
@@ -69,8 +110,6 @@ public class MainActivity extends AppCompatActivity {
 
             inputNum.setText(String.join(" ", tokens));
         });
-
-        MaterialButton[] operatorButtons = {buttonAdd, buttonSub, buttonMul, buttonDiv};
 
         for(int i=0; i<operatorButtons.length; i++) {
             int finalI = i;
@@ -167,6 +206,7 @@ public class MainActivity extends AppCompatActivity {
         buttonAC.setOnClickListener(v -> {
             tokens.clear();
             inputNum.setText("");
+            inputNum.setTextSize(TypedValue.COMPLEX_UNIT_SP, 60);
         });
 
         buttonDel.setOnClickListener(v -> {
@@ -184,10 +224,17 @@ public class MainActivity extends AppCompatActivity {
             try {
                 List<String> postfix = infixToPostfix(tokens);
                 double result = evaluatePostfix(postfix);
-                inputNum.setText(String.valueOf(result));
 
-                tokens.clear();
-                tokens.push(String.valueOf(result));
+                if(result == Math.floor(result)) {
+                    inputNum.setText(String.valueOf((long) result));
+                    tokens.clear();
+                    tokens.push(String.valueOf((long) result));
+                } else {
+                    inputNum.setText(String.valueOf(result));
+                    tokens.clear();
+                    tokens.push(String.valueOf(result));
+                }
+
             } catch (Exception e) {
                 inputNum.setText("Error");
             }
