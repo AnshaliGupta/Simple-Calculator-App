@@ -1,27 +1,33 @@
-# 🧮 Simple Calculator App
-
-A basic **Android Calculator App** built in **Java**, designed to perform fundamental arithmetic operations with a clean and intuitive UI.
-This app was developed as part of my Android learning journey to strengthen my understanding of **UI components**, **event handling**, and **expression evaluation** in Java.
-
----
-
-## 🚀 Features
-
-* ➕ **Basic arithmetic operations** — Addition, Subtraction, Multiplication, Division
-* 🔢 **Handles multi-digit numbers and decimals**
-* 💯 **Percentage (%) support**
-* 🔄 **Sign toggle (+/–)** for positive/negative numbers
-* 🧹 **Clear (AC)** and **Delete (⌫)** buttons
-* 🧠 **Custom infix to postfix expression evaluation logic** (without external libraries)
-* 📱 Simple and responsive UI built using **Material Buttons**
+# QuickCalc 🧮 (Version 2)
+A simple yet elegant Calculator App built in Java using Android Studio, now updated with an improved UI, smoother animations, and better result handling.
+This app performs basic arithmetic operations efficiently and provides a clean, responsive user experience.
 
 ---
 
-## 🧩 Tech Stack
+## 🚀 Version 2 Updates
+- 💜 **Modernized UI** using improved layout and colors  
+- 📏 **Auto text resizing** for long expressions  
+- ⚡ **Animated button feedback** for smoother interactions  
+- 🧮 **Smart result formatting** (no unnecessary decimals)  
+- ✨ **Splash screen** for a polished start  
 
-* **Language:** Java
-* **IDE:** Android Studio
-* **UI Framework:** XML layouts + Material Design components
+---
+
+## 💡 Features
+- ➕ Addition, ➖ Subtraction, ✖️ Multiplication, ➗ Division
+- 🔢 Supports multi-digit and decimal inputs
+- 🔁 Toggle sign (+/-) of numbers
+- 🎯 Percentage calculation support
+- 🧼 AC (All Clear) and Delete button for easy correction
+- 📱 Responsive and modern UI design using Material Buttons and ConstraintLayout
+- ⚡ Real-time token-based evaluation logic
+
+---
+
+## ⚙️ Tech Stack
+- Java  
+- Android Studio  
+- Material Design Components
 
 ---
 
@@ -29,43 +35,18 @@ This app was developed as part of my Android learning journey to strengthen my u
 
 | Calculator UI                                    |
 | ------------------------------------------------ |
-| <img width="197" height="611" alt="Screenshot 2025-10-24 221742" src="https://github.com/user-attachments/assets/5e829aae-d8c1-45e3-9c6e-9ac682d96a14" /> |
+|<img width="184" height="636" alt="Screenshot 2025-11-01 180138" src="https://github.com/user-attachments/assets/c3ec09d6-d0a3-45b9-8e8d-99ad0ec6edae" />|
+|<img width="184" height="636" alt="Screenshot 2025-11-01 183856" src="https://github.com/user-attachments/assets/83e4651c-4b9e-4287-a9ef-b1b28528ec03" />|
+
 
 ---
 
-## ⚙️ How It Works
-
-* Uses a `Stack<String>` to manage numbers and operators.
-* Converts infix expressions (like `5 + 6 x 2`) to postfix notation for evaluation.
-* Handles decimals and signs with proper validation.
-* Supports chained operations (e.g., `45 + 23 - 10 / 2`).
-
----
-
-## 🧱 Folder Structure
-
-```
-app/
-├── java/
-│   └── com.anshali.calculator/
-│       └── MainActivity.java
-├── res/
-│   ├── layout/
-│   │   └── activity_main.xml
-│   └── values/
-│       ├── colors.xml
-│       ├── strings.xml
-│       └── themes.xml
-```
-
----
-
-## 🔮 Upcoming Improvements
+## 🧠 Future Improvements (Planned for Version 3)
 
 Planned features for the next versions:
 
-* 🎨 **Improved modern UI design** with rounded buttons and gradients
-* 🧾 **Calculation History**
+* ☰ **Three-dot menu** with additional options
+* 🕘 **History section** to view past calculations
 * 🧮 **Parentheses ( ) support**
 
 ---
@@ -73,9 +54,9 @@ Planned features for the next versions:
 
 ## 📚 Learning Highlights
 
-* Used **Stack** data structure for token evaluation
-* Practiced **Material Design UI** and layout structuring
-* Improved **debugging skills** and **error handling** in Android
+* Implemented **GridLayout** and **Material Design** to enhance the calculator’s UI and responsiveness.
+* Improved **expression evaluation logic** with stack-based infix to postfix conversion.
+* Added **smooth button animations** and **adaptive text sizing** for a better user experience.
 
 ---
 
